@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Oportunidad - B.O.U.</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="accesibilidad.css">
+</head>
+<body class="fondo-detalle">
+
+
+  <header class="encabezado" id="inicio">
+    <div class="logo">
+      <div class="circulo-logo"><img src="img/logoBOU.png" alt="Logo de Bou"></div>
+      <p>B.O.U.</p>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#oportunidades">Oportunidades</a>
+      <a href="index.html#becas">Becas</a>
+      <a href="index.html#eventos">Eventos</a>
+      <a href="index.html#nosotros">Nosotros</a>
+    </nav>
+
+    <div class="botones-cuenta">
+      <div>
+        <button class="boton-ingresar"><a href="Imiciosesion.html" class="link-invisible">Iniciar sesión</a></button>
+      </div>
+      <div>
+        <button class="boton-ingresar"><a href="Registro.html" class="link-invisible">Registrarse</a></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor-ver-mas">
+
+    <div class="barra-retorno">
+      <a href="index.html#oportunidades" class="enlace-volver">← Volver a todas las oportunidades</a>
+      <div class="selector-rapido">
+        <label for="selectorOportunidad">Cambiar oportunidad:</label>
+        <select id="selectorOportunidad">
+          <option value="beca-usmp">Beca de Excelencia Académica USMP</option>
+          <option value="practica-software">Práctica de ingeniería de software</option>
+          <option value="intercambio-unam">Programa de Movilidad Estudiantil UNAM</option>
+          <option value="voluntariado-techo">Voluntariado TECHO</option>
+          <option value="curso-python">Data Science con Python</option>
+          <option value="hackathon-nasa">Hackathon NASA Space Apps</option>
+        </select>
+      </div>
+    </div>
+
+    <article class="ficha-oportunidad" id="fichaOportunidad">
+
+      <div class="ficha-cabecera">
+        <div class="ficha-tags" id="detalleTags">
+
+        </div>
+        <div class="ficha-identidad">
+          <img id="detalleLogo" src="img/beca.png" alt="Logo de la institución" class="ficha-logo">
+          <div class="ficha-titulos">
+            <h1 id="detalleTitulo">Cargando oportunidad...</h1>
+            <p id="detalleInstitucion" class="ficha-institucion">Institución convocante</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="ficha-acciones">
+        <button class="ficha-btn ficha-btn-primario" id="btnPostular">Postular ahora</button>
+        <button class="ficha-btn ficha-btn-secundario" id="btnFavorito">
+          <span id="iconoFav"></span> <span id="textoFav">Guardar en favoritos</span>
+        </button>
+        <button class="ficha-btn ficha-btn-secundario" id="btnCalendario">Agregar a Google Calendar</button>
+        <button class="ficha-btn ficha-btn-secundario" id="btnCompartir">🔗 Copiar enlace</button>
+      </div>
+
+
+      <div class="ficha-metricas">
+        <div class="caja-metrica">
+          <span class="etiqueta-metrica">UBICACIÓN</span>
+          <strong id="detalleLugar">-</strong>
+        </div>
+        <div class="caja-metrica">
+          <span class="etiqueta-metrica"> VACANTES / CUPOS</span>
+          <strong id="detalleCupos">-</strong>
+        </div>
+        <div class="caja-metrica">
+          <span class="etiqueta-metrica">DURACIÓN</span>
+          <strong id="detalleDuracion">-</strong>
+        </div>
+        <div class="caja-metrica">
+          <span class="etiqueta-metrica">FECHA LÍMITE</span>
+          <strong id="detalleFecha" class="texto-fecha-limite">-</strong>
+        </div>
+      </div>
+
+      <div class="ficha-cuerpo">
+
+        <section class="ficha-seccion">
+          <h2>Descripción del programa</h2>
+          <p id="detalleDescripcion"></p>
+        </section>
+
+
+        <section class="ficha-seccion">
+          <h2>Beneficios y cobertura</h2>
+          <div class="grilla-beneficios" id="detalleBeneficios"></div>
+        </section>
+
+
+        <section class="ficha-seccion">
+          <h2>Requisitos del postulante</h2>
+          <ul class="lista-requisitos-ficha" id="detalleRequisitos"></ul>
+        </section>
+
+
+        <section class="ficha-seccion">
+          <h2>Documentación requerida (Checklist de preparación)</h2>
+          <p class="subtexto-seccion">Marca los documentos que ya tienes listos para controlar el avance de tu expediente:</p>
+          <div class="lista-checklist" id="detalleDocumentos"></div>
+        </section>
+
+
+        <section class="ficha-seccion">
+          <h2> Cronograma del proceso</h2>
+          <div class="linea-tiempo" id="detalleCronograma"></div>
+        </section>
+
+  
+        <section class="ficha-seccion">
+          <div class="caja-bases-oficiales">
+            <div>
+              <h3> Bases oficiales y canal de consultas</h3>
+              <p>Contacto directo: <strong id="detalleContacto">-</strong></p>
+            </div>
+            <button class="btn-bases-pdf" id="btnDescargarBases">Descargar Bases en PDF</button>
+          </div>
+        </section>
+      </div>
+
+
+      <div class="ficha-pie">
+        <a href="index.html#oportunidades" class="ficha-btn ficha-btn-secundario" style="text-decoration: none;">← Regresar al catálogo</a>
+        <button class="ficha-btn ficha-btn-primario" id="btnPostularPie">Completar postulación</button>
+      </div>
+    </article>
+
+
+    <section class="seccion-similares">
+      <h2>Otras oportunidades que te pueden interesar</h2>
+      <div class="grilla-similares" id="grillaSimilares"></div>
+    </section>
+  </main>
+
+  <div class="toast-aviso" id="toastAviso"></div>
+
+
+  <footer class="pie-pagina">
+    <div class="inferior-footer">
+      <p>© 2026 BOU Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+
+  <script src="datos.js"></script>
+  <script>
+    const parametrosURL = new URLSearchParams(window.location.search);
+    let idActual = parametrosURL.get("id") || "beca-usmp";
+
+    if (!datosOportunidades[idActual]) {
+      idActual = "beca-usmp";
+    }
+
+    const selectorOportunidad = document.getElementById("selectorOportunidad");
+    const toastAviso = document.getElementById("toastAviso");
+    let timeoutToast = null;
+
+    function mostrarAviso(mensaje) {
+      toastAviso.textContent = mensaje;
+      toastAviso.classList.add("visible");
+      if (timeoutToast) clearTimeout(timeoutToast);
+      timeoutToast = setTimeout(function () {
+        toastAviso.classList.remove("visible");
+      }, 3200);
+    }
+
+    function obtenerFavoritos() {
+      try {
+        const guardados = localStorage.getItem("bou_favoritos");
+        return guardados ? JSON.parse(guardados) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function alternarFavorito(id) {
+      try {
+        const favs = obtenerFavoritos();
+        const idx = favs.indexOf(id);
+        let activo = false;
+        if (idx === -1) {
+          favs.push(id);
+          activo = true;
+        } else {
+          favs.splice(idx, 1);
+          activo = false;
+        }
+        localStorage.setItem("bou_favoritos", JSON.stringify(favs));
+        return activo;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function actualizarEstadoFavorito(esFav) {
+      const btnFav = document.getElementById("btnFavorito");
+      const iconoFav = document.getElementById("iconoFav");
+      const textoFav = document.getElementById("textoFav");
+      if (esFav) {
+        btnFav.classList.add("fav-activo");
+        iconoFav.textContent = "❤️";
+        textoFav.textContent = "Guardado en favoritos";
+      } else {
+        btnFav.classList.remove("fav-activo");
+        iconoFav.textContent = "🤍";
+        textoFav.textContent = "Guardar en favoritos";
+      }
+    }
+
+    function cargarDetalle(id) {
+      const op = datosOportunidades[id];
+      if (!op) return;
+      idActual = id;
+      selectorOportunidad.value = id;
+
+      document.title = op.titulo + " | B.O.U.";
+
+    
+      let tagsHTML = `<span class="${op.categoriaClase}">${op.categoria}</span>`;
+      tagsHTML += `<span class="${op.modalidadClase}">${op.modalidad}</span>`;
+      if (op.destacada) {
+        tagsHTML += `<span class="destacada">☀ Destacada</span>`;
+      }
+      tagsHTML += `<span class="tag-area">🎓 Área: ${op.area}</span>`;
+      document.getElementById("detalleTags").innerHTML = tagsHTML;
+
+
+      document.getElementById("detalleLogo").src = op.icono;
+      document.getElementById("detalleLogo").alt = op.titulo;
+      document.getElementById("detalleTitulo").textContent = op.titulo;
+      document.getElementById("detalleInstitucion").textContent = op.institucion;
+      document.getElementById("detalleLugar").textContent = op.lugar;
+      document.getElementById("detalleCupos").textContent = op.cupos;
+      document.getElementById("detalleDuracion").textContent = op.duracion;
+      document.getElementById("detalleFecha").textContent = op.fechaLimite;
+      document.getElementById("detalleDescripcion").textContent = op.descripcion;
+      document.getElementById("detalleContacto").textContent = op.contacto;
+
+
+      const favs = obtenerFavoritos();
+      actualizarEstadoFavorito(favs.includes(id));
+
+      // Verificar estado de postulación
+      try {
+        const uActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+        if (uActivo) {
+          const posts = JSON.parse(localStorage.getItem("bou_postulaciones")) || [];
+          const yaPost = posts.some(p => p.idOportunidad === id && p.correoUsuario.toLowerCase() === uActivo.correo.toLowerCase());
+          actualizarEstadoBotonPostular(yaPost);
+        } else {
+          actualizarEstadoBotonPostular(false);
+        }
+      } catch (e) {
+        actualizarEstadoBotonPostular(false);
+      }
+
+
+      const contBeneficios = document.getElementById("detalleBeneficios");
+      contBeneficios.innerHTML = "";
+      op.beneficios.forEach(function (b) {
+        const div = document.createElement("div");
+        div.className = "item-beneficio-ficha";
+        div.innerHTML = `<span class="icono-ben">${b.icono}</span><span>${b.texto}</span>`;
+        contBeneficios.appendChild(div);
+      });
+
+      const contRequisitos = document.getElementById("detalleRequisitos");
+      contRequisitos.innerHTML = "";
+      op.requisitos.forEach(function (r) {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="check-azul">✔</span><span>${r}</span>`;
+        contRequisitos.appendChild(li);
+      });
+
+      const contDocs = document.getElementById("detalleDocumentos");
+      contDocs.innerHTML = "";
+      op.documentos.forEach(function (doc, i) {
+        const label = document.createElement("label");
+        label.className = "fila-checklist";
+        label.innerHTML = `<input type="checkbox"><span>${doc}</span>`;
+        const input = label.querySelector("input");
+        input.addEventListener("change", function () {
+          if (input.checked) {
+            label.classList.add("completado");
+          } else {
+            label.classList.remove("completado");
+          }
+        });
+        contDocs.appendChild(label);
+      });
+
+
+      const contCrono = document.getElementById("detalleCronograma");
+      contCrono.innerHTML = "";
+      op.cronograma.forEach(function (paso) {
+        const div = document.createElement("div");
+        div.className = "paso-cronograma";
+        div.innerHTML = `
+          <div class="punto-cronograma"></div>
+          <div class="fecha-cronograma">${paso.fecha}</div>
+          <div class="evento-cronograma">${paso.evento}</div>
+        `;
+        contCrono.appendChild(div);
+      });
+
+
+      const grillaSimilares = document.getElementById("grillaSimilares");
+      grillaSimilares.innerHTML = "";
+      Object.keys(datosOportunidades).forEach(function (key) {
+        if (key !== id) {
+          const item = datosOportunidades[key];
+          const card = document.createElement("div");
+          card.className = "tarjeta-similar";
+          card.innerHTML = `
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+              <img src="${item.icono}" alt="" style="width:36px; height:36px; object-fit:contain;">
+              <div>
+                <h4 style="margin:0; font-size:14px; color:#1e293b;">${item.titulo}</h4>
+                <small style="color:#64748b;">${item.institucion}</small>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+              <span style="font-size:12px; color:#e84555; font-weight:bold;">⏰ ${item.fechaLimite}</span>
+              <a href="ver_mas.html?id=${item.id}" class="boton-ver" style="text-decoration:none;">Ver más</a>
+            </div>
+          `;
+          grillaSimilares.appendChild(card);
+        }
+      });
+    }
+
+
+    selectorOportunidad.addEventListener("change", function () {
+      const nuevoId = selectorOportunidad.value;
+      const nuevaUrl = window.location.pathname + "?id=" + nuevoId;
+      window.history.pushState({ id: nuevoId }, "", nuevaUrl);
+      cargarDetalle(nuevoId);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.getElementById("btnFavorito").addEventListener("click", function () {
+      const activo = alternarFavorito(idActual);
+      actualizarEstadoFavorito(activo);
+      mostrarAviso(activo ? "❤️ Oportunidad guardada en tus favoritos." : "Eliminada de tus favoritos.");
+    });
+
+    document.getElementById("btnCalendario").addEventListener("click", function () {
+      const op = datosOportunidades[idActual];
+      const titulo = encodeURIComponent("Fecha límite: " + op.titulo);
+      const fecha = op.fechaLimiteISO || "20260930T235959Z";
+      const detalles = encodeURIComponent("Postulación a " + op.titulo + " (" + op.institucion + ") vía B.O.U.");
+      const lugar = encodeURIComponent(op.lugar);
+      const urlCal = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + titulo + "&dates=" + fecha + "/" + fecha + "&details=" + detalles + "&location=" + lugar;
+      window.open(urlCal, "_blank");
+      mostrarAviso("📅 Abriendo Google Calendar para guardar el recordatorio...");
+    });
+
+    document.getElementById("btnCompartir").addEventListener("click", function () {
+      const op = datosOportunidades[idActual];
+      const texto = op.titulo + " - " + op.institucion + " (" + window.location.href + ")";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(function () {
+          mostrarAviso("🔗 ¡Enlace copiado al portapapeles!");
+        });
+      } else {
+        mostrarAviso("🔗 Enlace listo para compartir: " + window.location.href);
+      }
+    });
+
+    function actualizarEstadoBotonPostular(yaPostulado) {
+      const btn1 = document.getElementById("btnPostular");
+      const btn2 = document.getElementById("btnPostularPie");
+      if (yaPostulado) {
+        if (btn1) {
+          btn1.textContent = "✅ Ya estás postulado";
+          btn1.style.backgroundColor = "#10b981";
+        }
+        if (btn2) {
+          btn2.textContent = "✅ Ya estás postulado";
+          btn2.style.backgroundColor = "#10b981";
+        }
+      } else {
+        if (btn1) {
+          btn1.textContent = "🚀 Postular a esta oportunidad";
+          btn1.style.backgroundColor = "";
+        }
+        if (btn2) {
+          btn2.textContent = "🚀 Postular a esta oportunidad";
+          btn2.style.backgroundColor = "";
+        }
+      }
+    }
+
+    function accionPostular() {
+      const op = datosOportunidades[idActual];
+      let usuarioActivo = null;
+      try {
+        usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+      } catch (e) {
+        usuarioActivo = null;
+      }
+
+      if (!usuarioActivo) {
+        mostrarAviso("⚠️ Debes iniciar sesión para registrar tu postulación.");
+        setTimeout(function() {
+          window.location.href = "Imiciosesion.html";
+        }, 1600);
+        return;
+      }
+
+      let postulaciones = [];
+      try {
+        postulaciones = JSON.parse(localStorage.getItem("bou_postulaciones")) || [];
+      } catch (e) {
+        postulaciones = [];
+      }
+
+      const yaPostulado = postulaciones.some(function(p) {
+        return p.idOportunidad === idActual && p.correoUsuario.toLowerCase() === usuarioActivo.correo.toLowerCase();
+      });
+
+      if (yaPostulado) {
+        mostrarAviso("ℹ️ Ya estás postulado a esta convocatoria. Puedes revisarla en 'Mis Postulaciones'.");
+        return;
+      }
+
+      const fechaHoy = new Date().toLocaleDateString("es-PE", { day: '2-digit', month: '2-digit', year: 'numeric' });
+      postulaciones.push({
+        idOportunidad: idActual,
+        correoUsuario: usuarioActivo.correo,
+        fechaPostulacion: fechaHoy,
+        estado: "Enviada"
+      });
+
+      localStorage.setItem("bou_postulaciones", JSON.stringify(postulaciones));
+      actualizarEstadoBotonPostular(true);
+      mostrarAviso("🎉 ¡Postulación registrada! Guardada en 'Mis Postulaciones'.");
+    }
+
+    document.getElementById("btnPostular").addEventListener("click", accionPostular);
+    document.getElementById("btnPostularPie").addEventListener("click", accionPostular);
+
+    document.getElementById("btnDescargarBases").addEventListener("click", function () {
+      const op = datosOportunidades[idActual];
+      mostrarAviso("📥 Descargando bases oficiales en PDF de: " + op.titulo);
+    });
+
+
+    
+    // Gestión de estado de sesión
+    function inicializarEstadoSesion() {
+      const contenedorBotones = document.querySelector(".botones-cuenta");
+      if (!contenedorBotones) return;
+
+      try {
+        const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+        if (usuarioActivo && usuarioActivo.nombre) {
+          contenedorBotones.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span style="color: #ffffff; font-weight: 600; font-size: 14px;"> Hola, ${usuarioActivo.nombre}</span>
+              <a href="mis_postulaciones.html" class="boton-ingresar" style="background-color: #0284c7; border: 1px solid #0284c7; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; color: white; padding: 7px 12px; border-radius: 6px; font-weight: 600; font-size: 13px;"> Mis Postulaciones</a>
+              <button type="button" id="btnCerrarSesion" class="boton-ingresar" style="background-color: #ef4444; border: 1px solid #dc2626; cursor: pointer; color: white; padding: 7px 12px; border-radius: 6px; font-weight: 600; font-size: 13px;">Cerrar sesión</button>
+            </div>
+          `;
+
+          const btnCerrar = document.getElementById("btnCerrarSesion");
+          if (btnCerrar) {
+            btnCerrar.addEventListener("click", function () {
+              localStorage.removeItem("usuarioActivo");
+              window.location.reload();
+            });
+          }
+        }
+      } catch (e) {
+        console.error("Error al gestionar la sesión:", e);
+      }
+    }
+
+    inicializarEstadoSesion();
+    cargarDetalle(idActual);
+
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="accesibilidad.js"></script>
+</body>
+</html>

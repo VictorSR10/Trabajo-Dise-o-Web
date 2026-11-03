@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - B.O.U.</title>
+    
+    <!-- CDN oficial de jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .login-box {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 360px;
+            box-sizing: border-box;
+        }
+        .login-box h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333333;
+            text-align: center;
+        }
+        .textbox {
+            margin-bottom: 15px;
+        }
+        .textbox label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        .textbox input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            margin-top: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #mensaje {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            display: none;
+        }
+        .error { color: #d9534f; }
+        .success { color: #28a745; }
+        .enlaces-secundarios {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .enlaces-secundarios a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .enlaces-secundarios a:hover {
+            text-decoration: underline;
+        }
+        .volver-inicio {
+            display: block;
+            margin-top: 10px;
+            color: #888;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .volver-inicio:hover {
+            color: #555;
+        }
+    </style>
+    <link rel="stylesheet" href="accesibilidad.css">
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Iniciar Sesión</h2>
+    <form id="formLogin">
+        <div class="textbox">
+            <label for="usuario">Correo o Usuario</label>
+            <input type="text" id="usuario" placeholder="Ej. correo@ejemplo.com o admin" required>
+        </div>
+        <div class="textbox">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Tu contraseña" required>
+        </div>
+        <button type="submit" id="btnEnviar" class="btn">Entrar</button>
+    </form>
+    <div id="mensaje"></div>
+
+    <div class="enlaces-secundarios">
+        ¿No tienes una cuenta? <a href="Registro.html">Regístrate aquí</a>
+        <a href="index.html" class="volver-inicio">← Volver al inicio</a>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('#formLogin').on('submit', function(e) {
+        e.preventDefault();
+        
+        var usuario = $('#usuario').val().trim();
+        var password = $('#password').val();
+        var $mensaje = $('#mensaje');
+
+        if (usuario === '' || password === '') {
+            $mensaje.text('Por favor, completa todos los campos.')
+                    .removeClass('success').addClass('error').fadeIn();
+            return;
+        }
+
+        // Obtener lista de usuarios de localStorage
+        var usuarios = [];
+        try {
+            usuarios = JSON.parse(localStorage.getItem('usuarios_bou')) || [];
+        } catch (err) {
+            usuarios = [];
+        }
+
+        // Buscar si coincide por correo o por nombre
+        var usuarioEncontrado = usuarios.find(function(u) {
+            var coincideId = (u.correo && u.correo.toLowerCase() === usuario.toLowerCase()) || 
+                             (u.nombre && u.nombre.toLowerCase() === usuario.toLowerCase());
+            return coincideId && u.password === password;
+        });
+
+        // Soporte adicional para cuenta demo admin (admin / 12345)
+        var esAdmin = (usuario.toLowerCase() === 'admin' && password === '12345');
+
+        if (usuarioEncontrado || esAdmin) {
+            var datosSesion = usuarioEncontrado ? {
+                nombre: usuarioEncontrado.nombre,
+                correo: usuarioEncontrado.correo
+            } : {
+                nombre: 'Administrador',
+                correo: 'admin@bou.edu.pe'
+            };
+
+            // Guardar usuario activo en localStorage
+            localStorage.setItem('usuarioActivo', JSON.stringify(datosSesion));
+
+            $mensaje.text('¡Inicio de sesión exitoso! Redirigiendo...')
+                    .removeClass('error').addClass('success').fadeIn();
+
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 1000);
+        } else {
+            $mensaje.text('Usuario o contraseña incorrectos.')
+                    .removeClass('success').addClass('error').fadeIn();
+        }
+    });
+});
+</script>
+
+    <script src="accesibilidad.js"></script>
+</body>
+</html>

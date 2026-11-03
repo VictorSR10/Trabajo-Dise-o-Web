@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.O.U. - Oportunidades Universitarias</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="accesibilidad.css">
+</head>
+<body>
+
+  <header class="encabezado" id="inicio">
+    <div class="logo">
+      <div class="circulo-logo"><img src="img/logoBOU.png" alt="Logo de Bou"></div>
+      <p>B.O.U.</p>
+    </div>
+
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#oportunidades">Oportunidades</a>
+      <a href="#becas">Becas</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+
+    <div class="botones-cuenta">
+      <div>
+        <button class="boton-ingresar"><a href="Imiciosesion.html" class="link-invisible">Iniciar sesión</a></button>
+      </div>
+      <div>
+        <button class="boton-ingresar"><a href="Registro.html" class="link-invisible">Registrarse</a></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada">
+      <div class="contenido-portada">
+        <div class="texto-portada">
+          <p class="cantidad">● +1,500 oportunidades</p>
+
+          <h1>
+            Encuentra oportunidades<br>
+            para <span>impulsar tu futuro</span>
+          </h1>
+
+          <p class="descripcion-portada">
+            Esta página conecta a estudiantes universitarios con becas,
+            prácticas, intercambios y programas de formación para que
+            desarrollen su potencial académico y profesional.
+          </p>
+
+          <div class="estadisticas">
+            <div>
+              <h3>12K+</h3>
+              <p>Estudiantes</p>
+            </div>
+            <div>
+              <h3>350+</h3>
+              <p>Instituciones</p>
+            </div>
+            <div>
+              <h3>98%</h3>
+              <p>Satisfacción</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagen-portada">
+          <img src="img/bolsaMcft.png" alt="Bolsa Minecraft"></div>
+
+      </div>
+
+      <div class="buscador">
+        <p class="titulo-buscador">BUSCAR OPORTUNIDADES</p>
+
+        <div class="campos-buscador">
+          <div class="grupo-campo">
+            <label for="textoBusqueda">¿Qué oportunidad buscas?</label>
+            <input
+              type="text"
+              id="textoBusqueda"
+              placeholder="Beca, práctica, intercambio"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="areaBusqueda">Área de estudio</label>
+            <select id="areaBusqueda">
+              <option value="todas">Seleccione un área</option>
+              <option value="ingenieria">Ingeniería</option>
+              <option value="administracion">Administración</option>
+              <option value="ciencias">Ciencias</option>
+            </select>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="lugarBusqueda">Ubicación</label>
+            <input
+              type="text"
+              id="lugarBusqueda"
+              placeholder="País, ciudad o Virtual"
+            >
+          </div>
+
+          <button class="boton-azul" id="botonBuscar">Buscar oportunidades</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion categorias">
+      <p class="subtitulo-azul">EXPLORAR</p>
+      <h2>Categorías populares</h2>
+
+      <div class="lista-categorias">
+        <button class="categoria" data-categoria="beca">🎓<span>Becas</span></button>
+        <button class="categoria" data-categoria="practica">💼<span>Prácticas</span></button>
+        <button class="categoria" data-categoria="intercambio">✈️<span>Intercambios</span></button>
+        <button class="categoria" data-categoria="voluntariado">🤝<span>Voluntariados</span></button>
+        <button class="categoria" data-categoria="curso">📚<span>Cursos</span></button>
+        <button class="categoria" data-categoria="concurso">🏆<span>Concursos</span></button>
+        <button class="categoria" data-categoria="concurso">🗓️<span>Eventos</span></button>
+      </div>
+    </section>
+
+    <section class="seccion zona-oportunidades" id="oportunidades">
+      <aside class="filtros">
+        <h3>Filtros</h3>
+
+        <div class="grupo-filtro">
+          <h4>CATEGORÍA</h4>
+          <label><input type="radio" name="categoria" value="todas" checked> Todas</label>
+          <label><input type="radio" name="categoria" value="beca"> Becas</label>
+          <label><input type="radio" name="categoria" value="practica"> Prácticas</label>
+          <label><input type="radio" name="categoria" value="intercambio"> Intercambios</label>
+          <label><input type="radio" name="categoria" value="voluntariado"> Voluntariados</label>
+          <label><input type="radio" name="categoria" value="curso"> Cursos</label>
+          <label><input type="radio" name="categoria" value="concurso"> Concursos</label>
+        </div>
+
+        <div class="grupo-filtro">
+          <h4>MODALIDAD</h4>
+          <label><input type="checkbox" name="modalidad" value="presencial"> Presencial</label>
+          <label><input type="checkbox" name="modalidad" value="virtual"> Virtual</label>
+          <label><input type="checkbox" name="modalidad" value="hibrido"> Híbrido</label>
+        </div>
+
+        <div class="grupo-filtro">
+          <h4>ÁREA DE ESTUDIO</h4>
+          <select id="filtroArea">
+            <option value="todas">Todas las áreas</option>
+            <option value="ingenieria">Ingeniería</option>
+            <option value="administracion">Administración</option>
+            <option value="ciencias">Ciencias</option>
+          </select>
+        </div>
+
+        <button class="boton-limpiar" id="botonLimpiar">Limpiar filtros</button>
+      </aside>
+
+      <div class="oportunidades" id="becas">
+        <p class="subtitulo-azul">DESTACADAS</p>
+        <h2>Oportunidades destacadas</h2>
+
+        <p class="mensaje-resultados" id="mensajeResultados"></p>
+
+        <div class="lista-oportunidades" id="listaOportunidades">
+          <article
+            class="tarjeta-oportunidad"
+            data-categoria="beca"
+            data-modalidad="presencial"
+            data-area="ingenieria"
+            data-lugar="lima peru"
+          >
+            <div class="parte-superior">
+              <span class="etiqueta">Beca</span>
+              <span class="destacada">☀ Destacada</span>
+            </div>
+            <div class="informacion-tarjeta">
+              <img class="icono-tarjeta" src="img/beca.png" alt="">
+              <div>
+                <h3>Beca de Excelencia Académica USMP</h3>
+                <p>Universidad San Martín de Porres</p>
+              </div>
+            </div>
+            <div class="datos-tarjeta">
+              <span class="modalidad">Presencial</span>
+              <span>📌 Lima, Perú</span>
+            </div>
+            <div class="pie-tarjeta">
+              <p>⏰ <b>15 Sep 2026</b></p>
+              <a href="ver_mas.html?id=beca-usmp" class="boton-ver">Ver más</a>
+            </div>
+          </article>
+
+          <article
+            class="tarjeta-oportunidad"
+            data-categoria="practica"
+            data-modalidad="hibrido"
+            data-area="ingenieria"
+            data-lugar="tokyo japon"
+          >
+            <div class="parte-superior">
+              <span class="etiqueta morada">Práctica</span>
+              <span class="destacada">☀ Destacada</span>
+            </div>
+            <div class="informacion-tarjeta">
+              <img class="icono-tarjeta" src="img/practica.png" alt="microchip">
+              <div>
+                <h3>Práctica de ingeniería de software</h3>
+                <p>Empresa tecnológica internacional</p>
+              </div>
+            </div>
+            <div class="datos-tarjeta">
+              <span class="modalidad amarilla">Híbrido</span>
+              <span>📌 Tokyo, Japón</span>
+            </div>
+            <div class="pie-tarjeta">
+              <p>⏰ <b>30 Sep 2026</b></p>
+              <a href="ver_mas.html?id=practica-software" class="boton-ver">Ver más</a>
+            </div>
+          </article>
+
+          <article
+            class="tarjeta-oportunidad"
+            data-categoria="intercambio"
+            data-modalidad="presencial"
+            data-area="administracion"
+            data-lugar="mexico"
+          >
+            <div class="parte-superior">
+              <span class="etiqueta celeste">Intercambio</span>
+            </div>
+            <div class="informacion-tarjeta">
+              <img class="icono-tarjeta" src="img/intercambio.png" alt="intercambio">
+              <div>
+                <h3>Programa de Movilidad Estudiantil UNAM</h3>
+                <p>Universidad Nacional Autónoma de México</p>
+              </div>
+            </div>
+            <div class="datos-tarjeta">
+              <span class="modalidad">Presencial</span>
+              <span>📌 México D.F.</span>
+            </div>
+            <div class="pie-tarjeta">
+              <p>⏰ <b>15 Sep 2026</b></p>
+              <a href="ver_mas.html?id=intercambio-unam" class="boton-ver">Ver más</a>
+            </div>
+          </article>
+
+          <article
+            class="tarjeta-oportunidad"
+            data-categoria="voluntariado"
+            data-modalidad="presencial"
+            data-area="ingenieria"
+            data-lugar="santiago chile"
+          >
+            <div class="parte-superior">
+              <span class="etiqueta verde">Voluntariado</span>
+            </div>
+            <div class="informacion-tarjeta">
+              <img class="icono-tarjeta" src="img/voluntariado.png" alt="voluntariado">
+              <div>
+                <h3>Voluntariado TECHO</h3>
+                <p>Construcción comunitaria</p>
+              </div>
+            </div>
+            <div class="datos-tarjeta">
+              <span class="modalidad">Presencial</span>
+              <span>📌 Santiago, Chile</span>
+            </div>
+            <div class="pie-tarjeta">
+              <p>⏰ <b>10 Sep 2026</b></p>
+              <a href="ver_mas.html?id=voluntariado-techo" class="boton-ver">Ver más</a>
+            </div>
+          </article>
+
+          <article
+            class="tarjeta-oportunidad"
+            data-categoria="curso"
+            data-modalidad="virtual"
+            data-area="ciencias"
+            data-lugar="virtual en linea"
+          >
+            <div class="parte-superior">
+              <span class="etiqueta morada">Curso</span>
+              <span class="destacada">☀ Destacada</span>
+            </div>
+            <div class="informacion-tarjeta">
+              <img class="icono-tarjeta" src="img/python.png" alt="python">
+              <div>
+                <h3>Data Science con Python</h3>
+                <p>Certificación MIT</p>
+              </div>
+            </div>
+            <div class="datos-tarjeta">
+              <span class="modalidad morada">Virtual</span>
+              <span>📌 En línea</span>
+            </div>
+            <div class="pie-tarjeta">
+              <p>⏰ <b>05 Oct 2026</b></p>
+              <a href="ver_mas.html?id=curso-python" class="boton-ver">Ver más</a>
+            </div>
+          </article>
+
+          <article
+            class="tarjeta-oportunidad"
+            data-categoria="concurso"
+            data-modalidad="hibrido"
+            data-area="ingenieria"
+            data-lugar="lima peru"
+          >
+            <div class="parte-superior">
+              <span class="etiqueta amarilla">Concurso</span>
+            </div>
+            <div class="informacion-tarjeta">
+              <img class="icono-tarjeta" src="img/nasa.png" alt="nasa">
+              <div>
+                <h3>Hackathon NASA Space Apps</h3>
+                <p>NASA Space Apps Challenge</p>
+              </div>
+            </div>
+            <div class="datos-tarjeta">
+              <span class="modalidad amarilla">Híbrido</span>
+              <span>📌 Lima, Perú</span>
+            </div>
+            <div class="pie-tarjeta">
+              <p>⏰ <b>01 Oct 2026</b></p>
+              <a href="ver_mas.html?id=hackathon-nasa" class="boton-ver">Ver más</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!...Avance hoy 6 de octubre..>
+
+    <section class="seccion zona-eventos" id="eventos">
+      <a name="eventos">
+      <div class="titulo-con-enlace">
+        <div>
+          <p class="subtitulo-azul">AGENDA</p>
+          <h2>Próximos eventos</h2>
+        </div>
+   
+        <a href="#" id="verCalendario">Ver calendario →</a>
+      </div>
+   
+      <div class="lista-eventos">
+   
+        <article class="tarjeta-evento" data-evento="evento-beca" data-cupos="25">
+          <div class="cabecera-tarjeta-evento">
+            <p class="icono-evento">🎓</p>
+            <span class="badge-cupos">🔥 <b class="num-cupos">25</b> cupos libres</span>
+          </div>
+   
+          <h3>Cómo ganar una beca al exterior</h3>
+   
+          <p>BOU Academy</p>
+   
+          <small>
+            📆 12 Sep 2026 - 10:00 AM
+          </small>
+   
+          <button class="boton-inscribir">
+            Inscribirse
+          </button>
+        </article>
+   
+        <article class="tarjeta-evento" data-evento="evento-linkedin" data-cupos="40">
+          <div class="cabecera-tarjeta-evento">
+            <p class="icono-evento">💡</p>
+            <span class="badge-cupos">🔥 <b class="num-cupos">40</b> cupos libres</span>
+          </div>
+   
+          <h3>Tendencias del mercado laboral 2026</h3>
+   
+          <p>LinkedIn Latinoamérica</p>
+   
+          <small>
+            📆 19 Sep 2026 - 06:00 PM
+          </small>
+   
+          <button class="boton-inscribir">
+            Inscribirse
+          </button>
+        </article>
+   
+        <article class="tarjeta-evento" data-evento="evento-feria" data-cupos="120">
+          <div class="cabecera-tarjeta-evento">
+            <p class="icono-evento">🏛️</p>
+            <span class="badge-cupos">🔥 <b class="num-cupos">120</b> cupos libres</span>
+          </div>
+   
+          <h3>Feria de Oportunidades Universitarias</h3>
+   
+          <p>BOU + 15 universidades</p>
+   
+          <small>
+            📆 03 Oct 2026 - 09:00 AM
+          </small>
+   
+          <button class="boton-inscribir">
+            Inscribirse
+          </button>
+        </article>
+   
+        <article class="tarjeta-evento" data-evento="evento-hackedu" data-cupos="18">
+          <div class="cabecera-tarjeta-evento">
+            <p class="icono-evento">💻</p>
+            <span class="badge-cupos">🔥 <b class="num-cupos">18</b> cupos libres</span>
+          </div>
+   
+          <h3>HackEdu: Soluciones para la Educación</h3>
+   
+          <p>Ministerio de Educación</p>
+   
+          <small>
+            📆 17 Oct 2026 - 08:00 AM
+          </small>
+   
+          <button class="boton-inscribir">
+            Inscribirse
+          </button>
+        </article>
+   
+      </div>
+   
+    </section>
+
+
+    <section class="seccion-instituciones">
+      <div class="banner-instituciones">
+        <div class="texto-instituciones">
+          <span class="etiqueta-institucion">🏫 Para Instituciones</span>
+          <h2>¿Representas a una institución?</h2>
+          <p>
+            Publica tus becas, prácticas y programas y conecta con miles de estudiantes talentosos de toda
+            latinoamérica.
+          </p>
+        </div>
+
+        <div class="acciones-instituciones">
+          <button class="boton-publicar" id="botonPublicar">Publicar una oportunidad</button>
+          <a href="#oportunidades" class="enlace-planes">Saber más sobre planes institucionales →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-testimonios">
+      <div class="encabezado-testimonios">
+        <p class="subtitulo-azul">TESTIMONIOS</p>
+        <h2>Estudiantes que ya impulsaron su futuro</h2>
+      </div>
+
+      <div class="lista-testimonios">
+        <article class="tarjeta-testimonio">
+          <p class="estrellas">⭐⭐⭐⭐⭐</p>
+          <p class="texto-testimonio">
+            "Gracias a B.O.U encontré la beca Fulbright para estudiar mi maestría en la USMP El proceso fue claro y el soporte increíble."
+          </p>
+          <div class="pie-testimonio">
+            <div class="autor-testimonio">
+              <img src="img/maryjane.png" alt="Mary Jane" class="foto-autor">
+              <div>
+                <h4 class="nombre-mary">Mary Jane</h4>
+                <p>Ing.Sistemas, UNSA</p>
+              </div>
+            </div>
+            <span class="etiqueta">Beca</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-testimonio">
+          <p class="estrellas">⭐⭐⭐⭐⭐</p>
+          <p class="texto-testimonio">
+            "Conseguí mi práctica en Deloitte Lima a través de la plataforma. La filtración por área de estudio ahorró mucho tiempo, siuuu."
+          </p>
+          <div class="pie-testimonio">
+            <div class="autor-testimonio">
+              <img src="img/cristiano.png" alt="Cristiano Ronaldo" class="foto-autor">
+              <div>
+                <h4 class="nombre-cristiano"><span class="texto-rojo">Cristiano</span> <span class="texto-verde">Ronaldo</span></h4>
+                <p>Administración, PUCP</p>
+              </div>
+            </div>
+            <span class="etiqueta morada">Práctica</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-testimonio">
+          <p class="estrellas">⭐⭐⭐⭐⭐</p>
+          <p class="texto-testimonio">
+            "Mi semestre de intercambio en la Universidad Peruana de Ciencias aplicadas lo gestioné completamente desde BOU. ¡100% recomendado chavales!"
+          </p>
+          <div class="pie-testimonio">
+            <div class="autor-testimonio">
+              <img src="img/vegetta.png" alt="Vegetta777" class="foto-autor">
+              <div>
+                <h4 class="nombre-vegetta">Vegetta777</h4>
+                <p>Relaciones Internacionales, UPC</p>
+              </div>
+            </div>
+            <span class="etiqueta celeste">Intercambio</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-suscripcion">
+      <div class="contenido-suscripcion">
+        <div class="texto-suscripcion">
+          <h2>Recibe oportunidades en tu correo</h2>
+          <p>Suscríbete y recibe alertas perzonalizadas según tu carrera de interes</p>
+        </div>
+
+        <div class="bloque-suscripcion">
+          <form class="formulario-suscripcion" id="formSuscripcion" novalidate>
+            <input type="email" id="correoSuscripcion" placeholder="tucorreo@universidad.edu" autocomplete="email" aria-describedby="mensajeSuscripcion">
+            <button type="submit" class="boton-suscribir" id="botonSuscribir">Suscribirse</button>
+          </form>
+
+          <p class="mensaje-suscripcion" id="mensajeSuscripcion" role="status" aria-live="polite"></p>
+
+          <div class="suscripcion-exito" id="suscripcionExito" style="display: none;">
+            <span class="icono-exito-susc">✅</span>
+            <div>
+              <strong>¡Ya estás suscrito!</strong>
+              <p id="textoSuscripcionExito">Te enviaremos oportunidades a tu correo.</p>
+            </div>
+            <button type="button" class="enlace-cambiar-correo" id="botonCambiarCorreo">Cambiar correo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <a name="nosotros"></a>
+    <div class="contenido-footer">
+      <div class="info-footer">
+        <div class="logo logo-footer">
+          <div class="circulo-logo"><img src="img/logoBOU.png" alt="Logo de Bou"></div>
+          <p>B.O.U.</p>
+        </div>
+
+        <p class="descripcion-footer">
+          Conectamos a estudiantes universitarios de Latinoamérica con las mejores<br>
+          oportunidades para su desarrollo académico y profesional.
+        </p>
+
+        <div class="redes-sociales">
+          <a href="https://x.com/" class="icono-red" aria-label="X">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="#111111">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/" class="icono-red" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#1877f2">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/" class="icono-red" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="13" height="13">
+              <defs>
+                <radialGradient id="igGrad" r="150%" cx="30%" cy="107%">
+                  <stop stop-color="#fdf497" offset="0"/>
+                  <stop stop-color="#fdf497" offset="0.05"/>
+                  <stop stop-color="#fd5949" offset="0.45"/>
+                  <stop stop-color="#d6249f" offset="0.6"/>
+                  <stop stop-color="#285AEB" offset="0.9"/>
+                </radialGradient>
+              </defs>
+              <path fill="url(#igGrad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="enlaces-footer">
+        <div class="columna-footer">
+          <h4>PLATAFORMA</h4>
+          <a href="#oportunidades">Oportunidades</a>
+          <a href="#becas">Becas</a>
+          <a href="#oportunidades">Prácticas</a>
+          <a href="#oportunidades">Intercambios</a>
+          <a href="#eventos">Eventos</a>
+        </div>
+
+        <div class="columna-footer">
+          <h4>SOPORTE</h4>
+          <a href="#inicio">Preguntas frecuentes</a>
+          <a href="#inicio">Contacto</a>
+          <a href="#inicio">Centro de ayuda</a>
+          <a href="#inicio">Reportar un problema</a>
+        </div>
+
+        <div class="columna-footer">
+          <h4>LEGAL</h4>
+          <a href="#inicio">Términos y condiciones</a>
+          <a href="#inicio">Políticas de privacidad</a>
+          <a href="#inicio">Cookies</a>
+          <a href="#inicio">Aviso legal</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="inferior-footer">
+      <p>© 2026 BOU Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+
+  <div class="overlay-inscripcion" id="modalInscripcionEvento" style="display: none;">
+    <div class="caja-modal-inscripcion">
+      <button type="button" class="cerrar-modal-inscripcion" id="btnCerrarInscripcion" aria-label="Cerrar">&times;</button>
+
+
+      <div class="cabecera-modal-evento">
+        <span class="icono-modal-evento" id="evModalIcono">🎓</span>
+        <div>
+          <span class="etiqueta-agenda-modal">INSCRIPCIÓN OFICIAL</span>
+          <h3 id="evModalTitulo">Nombre del Evento</h3>
+          <p id="evModalOrganizador">Organizador</p>
+          <small id="evModalFecha">📆 Fecha y hora</small>
+        </div>
+      </div>
+
+      <div id="pasoFormularioEvento" class="cuerpo-modal-evento">
+        <form id="formInscripcionEvento">
+          <div class="grupo-campo-ev">
+            <label for="evNombre">Nombre completo del estudiante *</label>
+            <input type="text" id="evNombre" placeholder="Ej. Andrea Morales" required>
+          </div>
+
+          <div class="fila-dos-campos-ev">
+            <div class="grupo-campo-ev">
+              <label for="evCorreo">Correo institucional o personal *</label>
+              <input type="email" id="evCorreo" placeholder="usuario@universidad.edu.pe" required>
+            </div>
+            <div class="grupo-campo-ev">
+              <label for="evUniversidad">Universidad / Institución *</label>
+              <input type="text" id="evUniversidad" placeholder="Ej. USMP, UNMSM, PUCP..." required>
+            </div>
+          </div>
+
+          <div class="fila-dos-campos-ev">
+            <div class="grupo-campo-ev">
+              <label for="evModalidad">Modalidad de asistencia</label>
+              <select id="evModalidad">
+                <option value="Virtual (Zoom / Meet)">Virtual (Transmisión en vivo)</option>
+                <option value="Presencial (Auditorio)">Presencial (Auditorio central)</option>
+              </select>
+            </div>
+            <div class="grupo-campo-ev">
+              <label for="evCiclo">Ciclo o situación actual</label>
+              <select id="evCiclo">
+                <option value="1ro a 5to ciclo">1ro a 5to ciclo</option>
+                <option value="6to a 10mo ciclo" selected>6to a 10mo ciclo</option>
+                <option value="Egresado / Bachiller">Egresado / Bachiller</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grupo-campo-ev">
+            <label for="evPregunta">¿Tienes alguna pregunta para el ponente? (Opcional)</label>
+            <input type="text" id="evPregunta" placeholder="Escribe tu consulta para que sea respondida en la ronda en vivo...">
+          </div>
+
+          <label class="check-recordatorio-ev">
+            <input type="checkbox" id="evRecordatorio" checked>
+            <span>Deseo recibir el enlace de acceso y un recordatorio 15 minutos antes del inicio.</span>
+          </label>
+
+          <p id="evMensajeError" class="mensaje-error-ev" style="display: none;"></p>
+
+          <div class="acciones-form-ev">
+            <button type="button" class="btn-ev-secundario" id="btnCancelarFormEv">Cancelar</button>
+            <button type="submit" class="btn-ev-primario" id="btnConfirmarInscripcion">Confirmar mi cupo →</button>
+          </div>
+        </form>
+      </div>
+
+   
+      <div id="pasoTicketEvento" class="cuerpo-modal-evento" style="display: none;">
+        <div class="banner-exito-ev">
+          <span>✅</span>
+          <div>
+            <h4>¡Tu inscripción está confirmada!</h4>
+            <p>Hemos generado tu credencial digital de acceso al evento.</p>
+          </div>
+        </div>
+
+        <div class="ticket-digital-bou">
+          <div class="ticket-info-izq">
+            <span class="ticket-codigo" id="ticketCodigo">#BOU-2026-0000</span>
+            <h4 id="ticketEvento">Nombre del Evento</h4>
+            <p class="ticket-meta" id="ticketFecha">📆 Fecha</p>
+            <div class="ticket-datos-alumno">
+              <div><small>ASISTENTE</small><strong id="ticketAsistente">-</strong></div>
+              <div><small>INSTITUCIÓN</small><strong id="ticketUni">-</strong></div>
+              <div><small>MODALIDAD</small><strong id="ticketMod">-</strong></div>
+              <div><small>CORREO</small><strong id="ticketEmail">-</strong></div>
+            </div>
+            <p class="ticket-acceso-link" id="ticketAcceso">🔗 Enlace de sala: meet.bou.edu.pe/sala-en-vivo</p>
+          </div>
+          <div class="ticket-qr-der">
+            <div class="caja-qr-svg" aria-label="Código QR de acceso">
+              <svg viewBox="0 0 100 100" width="88" height="88">
+                <rect width="100" height="100" fill="#ffffff"/>
+                <rect x="8" y="8" width="26" height="26" fill="none" stroke="#0f172a" stroke-width="6"/>
+                <rect x="15" y="15" width="12" height="12" fill="#0f172a"/>
+                <rect x="66" y="8" width="26" height="26" fill="none" stroke="#0f172a" stroke-width="6"/>
+                <rect x="73" y="15" width="12" height="12" fill="#0f172a"/>
+                <rect x="8" y="66" width="26" height="26" fill="none" stroke="#0f172a" stroke-width="6"/>
+                <rect x="15" y="73" width="12" height="12" fill="#0f172a"/>
+                <rect x="42" y="10" width="6" height="6" fill="#0f172a"/>
+                <rect x="52" y="16" width="6" height="12" fill="#0f172a"/>
+                <rect x="42" y="28" width="10" height="6" fill="#0f172a"/>
+                <rect x="10" y="42" width="12" height="6" fill="#0f172a"/>
+                <rect x="28" y="42" width="6" height="14" fill="#0f172a"/>
+                <rect x="42" y="42" width="16" height="16" fill="#0877f9"/>
+                <rect x="64" y="42" width="6" height="10" fill="#0f172a"/>
+                <rect x="76" y="46" width="14" height="6" fill="#0f172a"/>
+                <rect x="42" y="66" width="8" height="12" fill="#0f172a"/>
+                <rect x="56" y="64" width="14" height="6" fill="#0f172a"/>
+                <rect x="76" y="62" width="8" height="16" fill="#0f172a"/>
+                <rect x="54" y="78" width="16" height="12" fill="#0f172a"/>
+                <rect x="82" y="84" width="8" height="8" fill="#0f172a"/>
+              </svg>
+            </div>
+            <span class="qr-caption">PASE OFICIAL</span>
+          </div>
+        </div>
+
+        <div class="acciones-ticket-ev">
+          <button type="button" class="btn-ev-calendario" id="btnAgendarEventoCal">📅 Agregar a Google Calendar</button>
+          <button type="button" class="btn-ev-anular" id="btnAnularInscripcion">🗑 Cancelar mi inscripción</button>
+          <button type="button" class="btn-ev-primario" id="btnListoTicket">Entendido</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="overlay-inscripcion" id="modalPublicar" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="tituloModalPublicar">
+    <div class="caja-modal-inscripcion">
+      <button type="button" class="cerrar-modal-inscripcion" id="btnCerrarPublicar" aria-label="Cerrar">&times;</button>
+
+      <div class="cabecera-modal-evento">
+        <span class="icono-modal-evento">🏫</span>
+        <div>
+          <span class="etiqueta-agenda-modal">PARA INSTITUCIONES</span>
+          <h3 id="tituloModalPublicar">Publicar una oportunidad</h3>
+          <p>Completa los datos y aparecerá en el listado de oportunidades.</p>
+        </div>
+      </div>
+
+     
+      <div id="pasoFormPublicar" class="cuerpo-modal-evento">
+        <form id="formPublicar" novalidate>
+          <div class="fila-dos-campos-ev">
+            <div class="grupo-campo-ev">
+              <label for="pubInstitucion">Institución *</label>
+              <input type="text" id="pubInstitucion" placeholder="Ej. Universidad San Martín de Porres" maxlength="80">
+            </div>
+            <div class="grupo-campo-ev">
+              <label for="pubCorreo">Correo de contacto *</label>
+              <input type="email" id="pubCorreo" placeholder="contacto@institucion.edu.pe" maxlength="80">
+            </div>
+          </div>
+
+          <div class="grupo-campo-ev">
+            <label for="pubTitulo">Título de la oportunidad *</label>
+            <input type="text" id="pubTitulo" placeholder="Ej. Beca de Excelencia Académica 2027" maxlength="80">
+          </div>
+
+          <div class="fila-dos-campos-ev">
+            <div class="grupo-campo-ev">
+              <label for="pubCategoria">Tipo</label>
+              <select id="pubCategoria">
+                <option value="beca">Beca</option>
+                <option value="practica">Práctica</option>
+                <option value="intercambio">Intercambio</option>
+                <option value="voluntariado">Voluntariado</option>
+              </select>
+            </div>
+            <div class="grupo-campo-ev">
+              <label for="pubModalidad">Modalidad</label>
+              <select id="pubModalidad">
+                <option value="presencial">Presencial</option>
+                <option value="virtual">Virtual</option>
+                <option value="hibrido">Híbrido</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fila-dos-campos-ev">
+            <div class="grupo-campo-ev">
+              <label for="pubArea">Área</label>
+              <select id="pubArea">
+                <option value="ingenieria">Ingeniería</option>
+                <option value="administracion">Administración</option>
+                <option value="ciencias">Ciencias</option>
+              </select>
+            </div>
+            <div class="grupo-campo-ev">
+              <label for="pubLugar">Lugar *</label>
+              <input type="text" id="pubLugar" placeholder="Ej. Lima, Perú" maxlength="60">
+            </div>
+          </div>
+
+          <div class="grupo-campo-ev">
+            <label for="pubFecha">Fecha límite de postulación *</label>
+            <input type="date" id="pubFecha">
+          </div>
+
+          <div class="grupo-campo-ev">
+            <label for="pubDescripcion">Descripción breve (opcional)</label>
+            <textarea id="pubDescripcion" rows="3" maxlength="300" placeholder="Beneficios, requisitos principales, a quién va dirigida..."></textarea>
+          </div>
+
+          <p id="pubMensajeError" class="mensaje-error-ev" style="display: none;" role="alert"></p>
+
+          <div class="acciones-form-ev">
+            <button type="button" class="btn-ev-secundario" id="btnCancelarPublicar">Cancelar</button>
+            <button type="submit" class="btn-ev-primario btn-publicar-verde">Publicar oportunidad →</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="pasoExitoPublicar" class="cuerpo-modal-evento" style="display: none;">
+        <div class="banner-exito-ev">
+          <span>✅</span>
+          <div>
+            <h4>¡Oportunidad publicada!</h4>
+            <p id="pubTextoExito">Ya aparece en el listado de oportunidades.</p>
+          </div>
+        </div>
+        <div class="acciones-ticket-ev">
+          <button type="button" class="btn-ev-secundario" id="btnPublicarOtra">Publicar otra</button>
+          <button type="button" class="btn-ev-primario" id="btnVerPublicada">Ver en el listado</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+  <script src="datos.js"></script>
+  <script src="funciones.js"></script>
+  <script src="jquery1.js"></script>
+  <script src="publicar_suscribir.js"></script>
+  <script src="accesibilidad.js"></script>
+</body>
+</html>
